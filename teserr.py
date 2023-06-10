@@ -6,7 +6,7 @@ import wave
 import torchaudio
 import torch
 import numpy as np
-from neuralnet.read_data import get_featurizer
+from neuralnet import get_featurizer
 from threading import Event
 
 
