@@ -150,3 +150,4 @@ if __name__ == "__main__":
     
     wakeword_engine.run(action)
     threading.Event().wait()
+#program loops and ends here
