@@ -151,3 +151,4 @@ if __name__ == "__main__":
     wakeword_engine.run(action)
     threading.Event().wait()
 #program loops and ends here
+#I can't believe that this stupid msg can be considered as a contribution
