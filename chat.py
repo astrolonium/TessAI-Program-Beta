@@ -20,3 +20,4 @@ except sr.UnknownValueError:
     print("Sorry, I could not understand what you said.")
 except sr.RequestError as e:
     print(f"Could not request results from Google Speech Recognition service; {e}")
+#fake
