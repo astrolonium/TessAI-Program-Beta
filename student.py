@@ -55,3 +55,4 @@ cob_label.pack()
 
 # Run the window
 window.mainloop()
+#another useless line to fake the contribution chart
