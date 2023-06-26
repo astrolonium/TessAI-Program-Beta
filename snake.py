@@ -137,7 +137,7 @@ def structure():
 if __name__ == "__main__":
     root = tk.Tk()
     root.geometry("1536x864")
-    # root.attributes("-fullscreen",True)
+    
     canvas = tk.Canvas(root,width=1536,height=864)
     canvas.pack()
     x_mouse = random.randrange(18,1469)
