@@ -25,7 +25,7 @@ class ChessGame:
                 button.grid(row=i, column=j)
 
     def move(self, start_pos, end_pos):
-        pass  # implement move logic here
+        pass  
 
 root = tk.Tk()
 game = ChessGame(root)
