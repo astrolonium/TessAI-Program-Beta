@@ -45,27 +45,24 @@ class WakeWordEngine:
 
     def save(self, waveforms, fname="wakeword_temp"):
         wf = wave.open(fname, "wb")
-        # set the channels
+
         wf.setnchannels(1)
-        # set the sample format
+ 
         wf.setsampwidth(self.listener.p.get_sample_size(pyaudio.paInt16))
-        # set the sample rate
+ 
         wf.setframerate(8000)
-        # write the frames as bytes
+
         wf.writeframes(b"".join(waveforms))
-        # close the file
+
         wf.close()
         return fname
 
     def predict(self, audio):
         with torch.no_grad():
             fname = self.save(audio)
-            waveform, _ = torchaudio.load(fname, normalization=False)  # don't normalize on train
+            waveform, _ = torchaudio.load(fname, normalization=False)  
             mfcc = self.featurizer(waveform).transpose(1, 2).transpose(0, 1)
 
-            # TODO: read from buffer instead of saving and loading file
-            # waveform = torch.Tensor([np.frombuffer(a, dtype=np.int16) for a in audio]).flatten()
-            # mfcc = self.featurizer(waveform).transpose(0, 1).unsqueeze(1)
 
             out = self.model(mfcc)
             pred = torch.round(torch.sigmoid(out))
@@ -73,7 +70,7 @@ class WakeWordEngine:
 
     def inference_loop(self, action):
         while True:
-            if len(self.audio_q) > 15:  # remove part of stream
+            if len(self.audio_q) > 15: 
                 diff = len(self.audio_q) - 15
                 for _ in range(diff):
                     self.audio_q.pop(0)
@@ -96,7 +93,7 @@ class DemoAction:
     wakeword is to activation.
     """
     def __init__(self, sensitivity=10):
-        # import stuff here to prevent engine
+        
         import os
         import subprocess
         import random
@@ -150,5 +147,4 @@ if __name__ == "__main__":
     
     wakeword_engine.run(action)
     threading.Event().wait()
-#program loops and ends here
-#I can't believe that this stupid msg can be considered as a contribution
+
