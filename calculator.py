@@ -8,7 +8,6 @@ class Calculator:
         self.entry = tk.Entry(self.master, width=30)
         self.entry.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
-        # Create buttons
         buttons = [
             "sin", "cos", "tan", "log",
             "7", "8", "9", "/",
