@@ -96,8 +96,7 @@ def main():
         main()
     clear = lambda: os.system('clr')
      
-    # This Function will clean any
-    # command before execution of this python file
+    
     clear()
     wishMe()
     username()
@@ -105,11 +104,7 @@ def main():
     while True:
          
         query = takeCommand().lower()
-         
-        # All the commands said by user will be
-        # stored here in 'query' and will be
-        # converted to lower case for easily
-        # recognition of command
+       
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             query = query.replace("wikipedia", "")
@@ -133,7 +128,7 @@ def main():
         elif 'play music' in query or "play song" in query:
             speak("Here you go with music")
             # music_dir = "G:\\Song"
-            music_dir = "C:\\Users\\GAURAV\\Music"
+            music_dir = "C:\\Users\Music"
             songs = os.listdir(music_dir)
             print(songs)   
             random = os.startfile(os.path.join(music_dir, songs[1]))
@@ -143,7 +138,7 @@ def main():
             speak(f"Sir, the time is {strTime}")
  
         elif 'open opera' in query:
-            codePath = r"C:\\Users\\GAURAV\\AppData\\Local\\Programs\\Opera\\launcher.exe"
+            codePath = r"C:\\Users\launcher.exe"
             os.startfile(codePath)
  
         elif 'email to gaurav' in query:
@@ -342,8 +337,7 @@ def main():
                                        expected_size =(total_length / 1024) + 1):
                     if ch:
                       Pypdf.write(ch)
-                     
-        # NPPR9-FWDCX-D2C8J-H872K-2YT43
+        
         elif "jarvis" in query:
              
             wishMe()
@@ -352,8 +346,7 @@ def main():
  
         elif "weather" in query:
              
-            # Google Open weather website
-            # to get API of Open weather
+          
             api_key = "Api key"
             base_url = "http://api.openweathermap.org / data / 2.5 / weather?"
             speak(" City name ")
@@ -376,7 +369,7 @@ def main():
                 speak(" City Not Found ")
              
         elif "send message " in query:
-                # You need to create an account on Twilio to use this service
+           
                 account_sid = 'Account Sid key'
                 auth_token = 'Auth token'
                 client = Client(account_sid, auth_token)
@@ -398,7 +391,6 @@ def main():
             speak("How are you Mister")
             speak(assname)
  
-        # most asked question from google Assistant
         elif "will you be my gf" in query or "will you be my bf" in query:  
             speak("I'm not sure about, may be you should give me some time")
  
@@ -409,9 +401,7 @@ def main():
             speak("It's hard to understand")
  
         elif "what is" in query or "who is" in query:
-             
-            # Use the same API key
-            # that we have generated earlier
+           
             client = wolframalpha.Client("API_ID")
             res = client.query(query)
              
@@ -421,8 +411,5 @@ def main():
             except StopIteration:
                 print ("No results")
  
-        # elif "" in query:
-            # Command go here
-            # For adding more commands
-
+       
             
