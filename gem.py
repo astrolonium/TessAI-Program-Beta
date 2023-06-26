@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 
- #creating aILabel Widget
+
 myLabel1 = Label(root, text="Hellow world! ")
 myLabel2 = Label(root, text="Hellow world! is ok ")
 myLabel3 = Label(root, text="Teh wolrd is fine ")
@@ -24,7 +24,7 @@ myLabel27 = Label(root, text="Hellow world! is ok ")
 myLabel28 = Label(root, text="Hellow world! is ok ")
 myLabel29 = Label(root, text="Hellow world! is ok ")
 
-#Shoving it onto the screen
+
 myLabel1.grid(row=0, column=0)
 myLabel2.grid(row=1, column=2)
 myLabel3.grid(row=2, column=0)
@@ -43,4 +43,4 @@ myLabel23.grid(row=13, column=0)
 
 
 root.mainloop()
-#fake again gotcha
+
