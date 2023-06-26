@@ -1,15 +1,15 @@
-import speech_recognition as sr    #To convert speech into text
-import pyttsx3                     #To convert text into speech
-import datetime                    #To get the date and time
-import wikipedia                   #To get information from wikipedia
-import webbrowser                  #To open websites
-import os                          #To open files
-import time                        #To calculate time
-import subprocess                  #To open files
-from tkinter import *              #For the graphics
-import pyjokes                     #For some really bad jokes
-from playsound import playsound    #To playsound
-import keyboard                    #To get keyboard
+import speech_recognition as sr
+import pyttsx3                     
+import datetime                   
+import wikipedia                  
+import webbrowser                 
+import os                          
+import time                      
+import subprocess                 
+from tkinter import *             
+import pyjokes                  
+from playsound import playsound  
+import keyboard                 
   
 
 name_assistant = "Tess"
@@ -96,7 +96,7 @@ def Process_audio():
 
             app_string = ["open word", "open powerpoint", "open excel", "open zoom","open notepad",  "open chrome"]
             app_link = [r'\Microsoft Office Word 2007.lnk',r'\Microsoft Office PowerPoint 2007.lnk', r'\Microsoft Office Excel 2007.lnk', r'\Zoom.lnk', r'\Notepad.lnk', r'\Google Chrome.lnk' ]
-            app_dest = r'C:\Users\shriraksha\AppData\Roaming\Microsoft\Windows\Start Menu\Programs'
+            app_dest = r'C:\Users\Programs'
 
             statement = get_audio().lower()
             results = ''
@@ -184,7 +184,7 @@ def Process_audio():
                        
 
             if 'news' in statement:
-                news = webbrowser.open_new_tab("https://timesofindia.indiatimes.com/city/mangalore")
+                news = webbrowser.open_new_tab("https://mangalore.com")
                 speak('Here are some headlines from the Times of India, Happy reading')
                 time.sleep(6)
 
