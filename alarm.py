@@ -9,7 +9,7 @@ class AlarmClock:
         self.alarms = []
         self.alarm_labels = []
 
-        # Create widgets
+        
         self.label_time = tk.Label(self.master, font=('calibri', 40, 'bold'), bg='black', fg='white', width=10, anchor='center')
         self.label_time.pack(padx=10, pady=10)
 
@@ -22,7 +22,6 @@ class AlarmClock:
         self.button_set_alarm = tk.Button(self.master, text='Add Alarm', font=('calibri', 16), command=self.add_alarm)
         self.button_set_alarm.pack(padx=10, pady=10)
 
-        # Create a timer to update the time label every second
         self.update_time()
         self.timer = self.master.after(1000, self.update_time)
 
@@ -90,7 +89,7 @@ class AlarmClock:
                 except:
                     pass
 
-            # Remove the alarm
+           
             self.alarms.pop(i)
             self.alarm_labels.pop(i)
             self.label_alarm.config(text='Alarm triggered', fg='red')
